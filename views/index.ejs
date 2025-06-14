@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Web application</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    
+    <h1>The Blog Post for everyone</h1>
+
+    <form action="/submit" method="POST">
+        <label for="titleInput">Title: </label>
+        <input name="title" type="text" placeholder="Enter title" id="titleInput">
+        <br>
+        <label for="textArea">Enter the blog here: </label>
+        <input type="text" id="textArea" placeholder="Enter the blog">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    <br>
+
+    <footer>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/blogs">Blogs</a>
+        </nav>
+        
+    </footer>
+
+
+    <!-- <script src="index.ejs"></script> -->
+</body>
+</html>

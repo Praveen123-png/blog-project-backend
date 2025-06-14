@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blogs</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <% if (locals.blogsHtml && locals.titleHtml) { %>
+        <ol>
+            <li>
+                <h3> <%= titleHtml %> </h3>
+                <p> <%= blogsHtml %> </p>
+            </li>
+        </ol>
+    <% } else { %>
+        <h2>Please Enter the title, and the blog.</h2>
+    <% } %>
+
+
+    <footer>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/blogs">Blogs</a>
+        </nav>
+    </footer>
+
+</body>
+</html>
