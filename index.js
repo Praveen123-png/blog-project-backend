@@ -33,12 +33,13 @@ app.post("/submit", (req, res) => {
         res.render("blogs.ejs", {posts: post});
     } 
     else {
-        res.render("blogs.ejs", {posts: "error"});
+        res.render("blogs.ejs", {posts: 0});
     }
 });
 
 app.delete("/delete", (req, res) => {
-
+    console.log("deleting the blog");
+    res.send("delete request");
 });
 
 app.listen(port, () => {
