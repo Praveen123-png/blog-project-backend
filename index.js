@@ -12,32 +12,23 @@ app.get("/", (req, res) => {
 });
 
 //separate array for each one or
-var titleArray = [];
-var blogsArray = [];
+// var titleArray = [];
+// var blogsArray = [];
 
 //an array of objects, this is best for both fetching and deleting
-var post = [
-    {title: "firstBlog", content: "hello"},
-    {title: "firstBlog", content: "hello"},
-]
+var post = []
 
 app.get("/blogs", (req, res) => {
-    res.render("blogs.ejs");
-    //     , {
-    //     titleHtml: req.body.title,
-    //     blogsHtml: req.body.blogs,
-    // });
-    
+    res.render("blogs.ejs", {posts: post});
 });
 
 app.post("/submit", (req, res) => {
     var title = req.body.title;
     var blogs = req.body.blog;
     // console.log(`Title: ${title} \nText: ${blogs}`);
-    res.render("blogs.ejs", {
-        titleHtml: title,
-        blogsHtml: blogs,
-    });
+    post.push({title: title, content: blogs});
+    // console.log(post);
+    res.render("blogs.ejs", {posts: post});
 });
 
 app.delete("/delete", (req, res) => {
