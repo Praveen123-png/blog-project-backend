@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>blogs</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/blogs.css">
 </head>
 <body>
 
@@ -14,12 +14,11 @@
                 <li>
                     <h3> <%= posts[i].title %> </h3>
                     <p> <%= posts[i].content %> </p>
+                    <form action="/delete" method="DELETE">
+                        <button>Delete</button>
+                    </form>
                 </li>
             <% } %>
-
-            <form action="/delete" method="DELETE">
-                <button>Delete</button>
-            </form>
         </ol>
     <% } else { %>
         <h2>Please Enter the title, and the blog.</h2>
