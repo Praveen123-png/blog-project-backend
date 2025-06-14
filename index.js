@@ -26,9 +26,15 @@ app.post("/submit", (req, res) => {
     var title = req.body.title;
     var blogs = req.body.blog;
     // console.log(`Title: ${title} \nText: ${blogs}`);
-    post.push({title: title, content: blogs});
-    // console.log(post);
-    res.render("blogs.ejs", {posts: post});
+
+    if(title.length > 0 && blogs.length > 0){
+        post.push({title: title, content: blogs});
+        // console.log(post);
+        res.render("blogs.ejs", {posts: post});
+    } 
+    else {
+        res.render("blogs.ejs", {posts: "error"});
+    }
 });
 
 app.delete("/delete", (req, res) => {
