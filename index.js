@@ -29,8 +29,8 @@ app.post("/submit", (req, res) => {
 
     if(title.length > 0 && blogs.length > 0){
         post.push({title: title, content: blogs});
-        // console.log(post);
         res.render("blogs.ejs", {posts: post});
+        // console.log(post);
     } 
     else {
         res.render("blogs.ejs", {posts: 0});
@@ -38,8 +38,8 @@ app.post("/submit", (req, res) => {
 });
 
 app.delete("/delete", (req, res) => {
-    console.log("deleting the blog");
-    res.send("delete request");
+    // console.log("deleting the blog");
+    // res.send("delete request");
 });
 
 app.listen(port, () => {
